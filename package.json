@@ -1,0 +1,22 @@
+{
+  "name": "node-speed-test",
+  "version": "1.0.0",
+  "description": "NodeJS app that does a speed test and appends the results to a Google Spreadsheet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/dmerica/node-speed-test.git"
+  },
+  "author": "David Merrick",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/dmerica/node-speed-test#readme",
+  "dependencies": {
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^16.0.0",
+    "moment": "^2.17.1",
+    "speedtest-net": "^1.2.11"
+  }
+}
