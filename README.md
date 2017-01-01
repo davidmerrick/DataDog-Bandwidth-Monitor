@@ -6,6 +6,6 @@ Wrote this to monitor my Comcast download and upload speeds.
 
 Follow steps on https://developers.google.com/sheets/api/quickstart/nodejs to set up an app and get auth working.
 
-Set the SHEET_ID environment variable to the ID of the spreadsheet you want to append to.
+Create a spreadsheet, copy the ID from the url (https://docs.google.com/spreadsheets/d/SHEET_ID), and set it as an environment variable called SHEET_ID.
 
 Execute index.js.
