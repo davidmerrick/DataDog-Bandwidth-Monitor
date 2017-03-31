@@ -2,7 +2,7 @@ NodeJS app that does an Internet speed test and appends the results to a Google 
 
 Wrote this to monitor my Comcast download and upload speeds.
 
-Runs continuously at an interval specified by the SPEED_TEST_INTERVAL_MIN environment variable.
+Runs continuously at an interval specified by the SPEED_TEST_INTERVAL_MIN environment variable (default is 15 min).
 
 ## Usage
 
