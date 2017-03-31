@@ -1,6 +1,6 @@
 NodeJS app that does an Internet speed test and appends the results to a Google Spreadsheet.
 
-Wrote this to monitor my Comcast download and upload speeds.
+Wrote this to monitor my Comcast download and upload speeds. Designed to be run on a Raspberry Pi with [Resin.io](https://resin.io/).
 
 Runs continuously at an interval specified by the SPEED_TEST_INTERVAL_MIN environment variable (default is 15 min).
 
