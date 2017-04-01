@@ -12,6 +12,9 @@ Set the following environment variables to the ones corresponding to your app:
 * CLIENT_SECRET
 * REDIRECT_URI
 
+If running this on Resin.io, also set TOKEN_DIR to "/data," so this will persist through updates.
+
 Create a spreadsheet, copy the ID from the url (https://docs.google.com/spreadsheets/d/SHEET_ID), and set it as an environment variable called SHEET_ID.
 
 Run 'npm start'
+Initially, you'll need to authenticate the app by pasting in a code. But then you should be good to go!
