@@ -7,6 +7,10 @@ Runs continuously at an interval specified by the SPEED_TEST_INTERVAL_MIN enviro
 ## Usage
 
 Follow steps on https://developers.google.com/sheets/api/quickstart/nodejs to set up an app and get auth working.
+Set the following environment variables to the ones corresponding to your app:
+* CLIENT_ID
+* CLIENT_SECRET
+* REDIRECT_URI
 
 Create a spreadsheet, copy the ID from the url (https://docs.google.com/spreadsheets/d/SHEET_ID), and set it as an environment variable called SHEET_ID.
 
