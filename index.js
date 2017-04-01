@@ -2,7 +2,7 @@ var fs = require('fs');
 var readline = require('readline');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
-var moment = require('moment');
+var moment = require('moment-timezone');
 var SpeedTest = require('speedtest-net');
 
 validateEnvironment();
@@ -13,8 +13,8 @@ const SHEET_ID = process.env.SHEET_ID;
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 const TOKEN_DIR = (process.env.TOKEN_DIR || process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE) + '/.credentials/';
 const TOKEN_PATH = TOKEN_DIR + 'sheets.googleapis.com-nodejs-quickstart.json';
-
 const SPEED_TEST_INTERVAL_MIN = process.env.SPEED_TEST_INTERVAL_MIN || 15;
+const TIMEZONE = process.env.TIMEZONE || 'America/Los_Angeles';
 
 console.log("Authorizing...");
 authorize(appendSheetItems);
@@ -139,7 +139,7 @@ function appendSheetItems(auth) {
     test.on('data', testData => {
         console.log("Appending data to sheet...");
         var sheets = google.sheets('v4');
-        var now = moment();
+        var now = moment.tz(TIMEZONE);
         var dateString = now.format("MM/DD/YYYY");
         var timeString = now.format("HH:mm");
         var dlSpeed = testData.speeds.download;
