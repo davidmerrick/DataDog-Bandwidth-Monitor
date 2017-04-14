@@ -1,20 +1,20 @@
-NodeJS app that does an Internet speed test and appends the results to a Google Spreadsheet.
+NodeJS app that does an Internet speed test uploads the results to DataDog.
 
-Wrote this to monitor my Comcast download and upload speeds. Designed to be run on a Raspberry Pi with [Resin.io](https://resin.io/).
+Wrote this to monitor my ISP's download and upload speeds. Designed to be run on a Raspberry Pi with [Resin.io](https://resin.io/).
 
-Runs continuously at an interval specified by the SPEED_TEST_INTERVAL_MIN environment variable (default is 15 min).
+Runs continuously at an interval specified by the SPEED_TEST_INTERVAL_MIN environment variable (default is 5 min).
 
-## Usage
+![screenshot](/img/screenshot.png)
 
-Follow steps on https://developers.google.com/sheets/api/quickstart/nodejs to set up an app and get auth working.
-Set the following environment variables to the ones corresponding to your app:
-* CLIENT_ID
-* CLIENT_SECRET
-* REDIRECT_URI
+## Resin.io instructions
 
-If running this on Resin.io, also set TOKEN_DIR to "/data," so this will persist through updates.
+1. Create an app on [Resin.io](https://docs.resin.io/raspberrypi/nodejs/getting-started/). 
+2. Add your git remote for your Resin.io app and push to it:
+ ```
+ git remote add resin your-username@git.resin.io:your-username/app-name.git
+ git push resin
+ ```
+3. Get a [DataDog API key](https://app.datadoghq.com/account/settings#api).
+4. In your Resin app, set the "DATADOG_API_KEY" environment variable to this key.
+5. Profit! You should start seeing metrics being uploaded to DataDog as soon as the app is up and running.
 
-Create a spreadsheet, copy the ID from the url (https://docs.google.com/spreadsheets/d/SHEET_ID), and set it as an environment variable called SHEET_ID.
-
-Run 'npm start'
-Initially, you'll need to authenticate the app by pasting in a code. But then you should be good to go!

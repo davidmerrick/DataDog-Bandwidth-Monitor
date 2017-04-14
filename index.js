@@ -5,8 +5,8 @@ var metrics = require('datadog-metrics');
 const SPEED_TEST_INTERVAL_MIN = process.env.SPEED_TEST_INTERVAL_MIN || 5;
 
 metrics.init({
-    host: 'Comcast',
-    prefix: 'comcast.'
+    host: 'ISP',
+    prefix: 'isp.'
 });
 
 uploadBandwidth();
