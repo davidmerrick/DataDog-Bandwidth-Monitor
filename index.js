@@ -9,11 +9,19 @@ metrics.init({
     prefix: 'isp.'
 });
 
-uploadBandwidth();
-const WAIT_MS = SPEED_TEST_INTERVAL_MIN * 60 * 1000;
-setInterval(uploadBandwidth, WAIT_MS);
+uploadBandwidth(() => {
+    console.log(`Sleeping for ${SPEED_TEST_INTERVAL_MIN} min`);
+});
 
-function uploadBandwidth() {
+const WAIT_MS = SPEED_TEST_INTERVAL_MIN * 60 * 1000;
+
+setInterval(() => {
+    uploadBandwidth(() => {
+        console.log(`Sleeping for ${SPEED_TEST_INTERVAL_MIN} min`);
+    });
+}, WAIT_MS);
+
+function uploadBandwidth(callback) {
     console.log("Running speed test...");
     var test = SpeedTest({maxTime: 5000});
 
@@ -28,5 +36,8 @@ function uploadBandwidth() {
         var ulSpeed = testData.speeds.upload;
         metrics.gauge('speed.download', dlSpeed);
         metrics.gauge('speed.upload', ulSpeed);
+        if(callback) {
+            callback();
+        };
     });
 }
