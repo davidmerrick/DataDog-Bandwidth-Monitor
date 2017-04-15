@@ -2,7 +2,7 @@ var fs = require('fs');
 var SpeedTest = require('speedtest-net');
 var metrics = require('datadog-metrics');
 
-const SPEED_TEST_INTERVAL_MIN = process.env.SPEED_TEST_INTERVAL_MIN || 5;
+const SPEED_TEST_INTERVAL_MIN = process.env.SPEED_TEST_INTERVAL_MIN || 20;
 
 metrics.init({
     host: 'ISP',
