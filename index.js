@@ -1,6 +1,5 @@
-var fs = require('fs');
-var SpeedTest = require('speedtest-net');
-var metrics = require('datadog-metrics');
+import SpeedTest from 'speedtest-net'
+import metrics from 'datadog-metrics'
 
 const SPEED_TEST_INTERVAL_MIN = process.env.SPEED_TEST_INTERVAL_MIN || 20;
 
