@@ -1,3 +1,5 @@
+For a comprehensive how-to guide, please see my website: https://www.david-merrick.com/2017/04/17/monitoring-your-internet-speed-with-resin-io-and-datadog/
+
 NodeJS app that does an Internet speed test uploads the results to DataDog.
 
 Wrote this to monitor my ISP's download and upload speeds. Designed to be run on a Raspberry Pi with [Resin.io](https://resin.io/).
